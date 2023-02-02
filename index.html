@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- =====BOX ICONS===== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Style/styles.css" />
+    <title>HexShaper</title>
+    <link rel="icon" href="img/TitleLogo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+      <nav class="nav bd-grid">
+        <div>
+          <a href="#" class="nav__logo">HexShaper</a>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="bx bx-menu"></i>
+        </div>
+
+        <div class="nav__menu" id="nav-menu">
+          <div class="nav__close" id="nav-close">
+            <i class="bx bx-x"></i>
+          </div>
+
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="#Hexagons" class="nav__link">Hexagons</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="l-main">
+      <!--===== HOME =====-->
+      <section class="home" id="home">
+        <div class="home__container bd-grid">
+          <div class="home__img">
+            <img src="img/img1.png" alt="" data-speed="-2" class="move" />
+            <img src="img/img2.png" alt="" data-speed="2" class="move" />
+            <img src="img/img3.png" alt="" data-speed="2" class="move" />
+            <img src="img/img4.png" alt="" data-speed="-2" class="move" />
+            <img src="img/img5.png" alt="" data-speed="-2" class="move" />
+            <img src="img/img6.png" alt="" data-speed="2" class="move" />
+          </div>
+
+          <div class="home__data">
+            <h1 class="home__title">Hexagons <br />Shaper</h1>
+            <p class="home__description">
+              Shape Your Table in <br />
+              Hex Grid.
+            </p>
+            <a href="#Hexagons" class="home__button">Get Started</a>
+          </div>
+        </div>
+        <div id="about" class="about">
+          <p>
+            We've Implement Some Tables into Hexagon Grid Shape <br />
+            Using Api's to make them more dynamic this is
+            <b><i>0.0.1</i> </b> version
+          </p>
+        </div>
+      </section>
+    </main>
+    <div class="hexB">
+      &nbsp;
+      <div id="Hexagons" class="Hexagons">
+        <h2>Hexagons Implementation</h2>
+        <div class="container">
+          <a href="PeriodicTable.html" class="box">
+            <h3>Periodic Table</h3>
+          </a>
+          <a href="/Calorise.html" class="box">
+            <h3>Dessert calories table</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="main-page"></div>
+    <script src="Script/router.js"></script>
+    <script src="Script/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+$mainColor: #fcf8f8;
+$altColor: #09161d;
+body {
+  background-color: $altColor;
+}
+h1 {
+  color: $mainColor;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.main {
+  --s: 100px; /* size of a hexagon */
+  --m: 8px; /* space between each heaxgon */
+  --r: calc(var(--s) * 3 * 1.1547 / 2 + 4 * var(--m));
+  display: flex;
+}
+.container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  flex-wrap: wrap;
+  div {
+    width: var(--s);
+    height: calc(var(--s) * 1.1547);
+    /* background-color: red; */
+    margin: var(--m);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    margin-bottom: calc(var(--m) - var(--s) * 0.2885);
+    span {
+      color: #263530;
+      font-size: 20px;
+      font-weight: blod;
+    }
+  }
+}
+.container::before {
+  content: "";
+  width: calc(var(--s) / 2 + var(--m));
+  float: left;
+  height: 100%;
+  shape-outside: repeating-linear-gradient(
+    transparent 0 calc(var(--r) - 3px),
+    #fff 0 var(--r)
+  );
+}
