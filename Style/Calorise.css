@@ -59,7 +59,7 @@ h1 {
 .container div span {
   text-align: center;
   color: #263530;
-  font-size: 5px;
+  font-size: 17px;
 }
 
 .container::before {
