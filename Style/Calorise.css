@@ -56,6 +56,7 @@ h1 {
   height: -moz-fit-content;
   height: fit-content;
 }
+<<<<<<< HEAD
 .container div figure span {
   color: #314941;
   font-size: 15px;
@@ -63,12 +64,24 @@ h1 {
 
 .container div:nth-child(odd) {
   background: green;
+=======
+.container div span {
+  text-align: center;
+  color: #263530;
+  font-size: 17px;
+>>>>>>> 0c5007389e437e0deac86afb4fdebd438c4f44df
 }
 
 .container::before {
   content: "";
   width: calc(var(--s) / 2 + var(--m));
   float: left;
+<<<<<<< HEAD
   height: 120%;
   shape-outside: repeating-linear-gradient(rgba(0, 0, 0, 0) 0 calc(var(--f) - 3px), #000 0 var(--f));
 }
+=======
+  height: 100%;
+  shape-outside: repeating-linear-gradient(transparent 0 calc(var(--r) - 3px), #fff 0 var(--r));
+}
+>>>>>>> 0c5007389e437e0deac86afb4fdebd438c4f44df
