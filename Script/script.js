@@ -1,31 +1,24 @@
 let container = document.querySelector(".container");
 let tester = document.title;
-function printCaloriseSection(name, cal, fat, car, prot) {
+function printCaloriseSection(name, cal) {
   let div = document.createElement("div");
   let Name = document.createTextNode(name);
   let calories = document.createTextNode(`Calories: ${cal}`);
-  let fats = document.createTextNode(`fat: ${fat}`);
-  let carbs = document.createTextNode(`Carb: ${car}`);
-  let protine = document.createTextNode(`Protine: ${prot}`);
 
   let spanName = document.createElement("span");
   spanName.style.fontWeight = "blod";
-  spanName.style.color = "#fcf8f8";
+  spanName.style.color = "#09161d";
 
   let spanCalories = document.createElement("span");
-  let spanFats = document.createElement("span");
-  let spanCarbs = document.createElement("span");
-  let spanProtine = document.createElement("span");
+  let SpanContainer = document.createElement("figure");
+
   spanName.appendChild(Name);
   spanCalories.appendChild(calories);
-  spanFats.appendChild(fats);
-  spanCarbs.appendChild(carbs);
-  spanProtine.appendChild(protine);
-  div.appendChild(spanName);
-  div.appendChild(spanCalories);
-  div.appendChild(spanFats);
-  div.appendChild(spanCarbs);
-  div.appendChild(spanProtine);
+
+  SpanContainer.appendChild(spanName);
+  SpanContainer.appendChild(spanCalories);
+
+  div.appendChild(SpanContainer);
   container.appendChild(div);
 
   div.style.backgroundColor = "#80f5d2";
@@ -63,16 +56,19 @@ function printHexagonsWithContentForPerTab(
   let spanName = document.createElement("span");
   let spanFamily = document.createElement("span");
   let spanMM = document.createElement("span");
+  let SpanContainer = document.createElement("figure");
+
   spanNum.appendChild(Num);
   spanSymb.appendChild(Symbole);
   spanName.appendChild(Name);
   spanFamily.appendChild(Family);
   spanMM.appendChild(Num);
-  div.appendChild(spanSymb);
-  div.appendChild(spanNum);
-  div.appendChild(spanName);
-  div.appendChild(spanFamily);
-  div.appendChild(spanMM);
+  SpanContainer.appendChild(spanSymb);
+  SpanContainer.appendChild(spanNum);
+  SpanContainer.appendChild(spanName);
+  SpanContainer.appendChild(spanFamily);
+  SpanContainer.appendChild(spanMM);
+  div.appendChild(SpanContainer);
   container.appendChild(div);
 
   div.style.backgroundColor = color;
@@ -98,13 +94,7 @@ fetch("https://mocki.io/v1/b23e6a5f-df8d-42e4-9f7d-73e335cc94da", {
     .then((res) => res.json())
     .then((data) => {
       data.data.forEach((ele) => {
-        printCaloriseSection(
-          ele.name,
-          ele.calories.value,
-          ele.fat.value,
-          ele.carbs.value,
-          ele.protein.value
-        );
+        printCaloriseSection(ele.name, ele.calories.value);
       });
     });
 } else {

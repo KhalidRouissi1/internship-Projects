@@ -15,30 +15,30 @@ h1 {
 }
 
 .main {
-  --s: 100px;
-  /* size of a hexagon */
-  --m: 8px;
-  /* space between each heaxgon */
-  --r: calc(var(--s) * 3 * 1.1547 / 2 + 4 * var(--m));
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  --s: 100px; /* size  */
+  --m: 4px; /* margin */
+  --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px);
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 80%;
-  margin: auto;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  font-size: 0;
 }
+
 .container div {
   width: var(--s);
-  height: calc(var(--s) * 1.1547);
-  /* background-color: red; */
   margin: var(--m);
+  height: calc(var(--s) * 1.1547);
+  display: inline-block;
+  font-size: initial;
+  -webkit-clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+          clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+  background: red;
+  margin-bottom: calc(var(--m) - var(--s) * 0.2885);
+}
+.container div figure {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,26 +46,29 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-          clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-  margin-bottom: calc(var(--m) - var(--s) * 0.2885);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-.container div span {
-  color: #263530;
+.container div figure span {
+  color: #314941;
   font-size: 20px;
-  font-weight: blod;
+}
+
+.container div:nth-child(odd) {
+  background: green;
 }
 
 .container::before {
   content: "";
   width: calc(var(--s) / 2 + var(--m));
   float: left;
-  height: 100%;
-  shape-outside: repeating-linear-gradient(transparent 0 calc(var(--r) - 3px), #fff 0 var(--r));
+  height: 120%;
+  shape-outside: repeating-linear-gradient(rgba(0, 0, 0, 0) 0 calc(var(--f) - 3px), #000 0 var(--f));
 }
